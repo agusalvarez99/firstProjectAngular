@@ -1,9 +1,11 @@
+.center {
+  text-align: center;
+}
 p {
   font-weight: bold;
 }
 body {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
   background-color: azure;
 }

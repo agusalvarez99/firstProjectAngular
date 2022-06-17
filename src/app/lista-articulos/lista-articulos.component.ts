@@ -10,6 +10,7 @@ export class ListaArticulosComponent implements OnInit {
   alturaImagen: number = 40;
   margenImagen: number = 2;
   mostrarImagen: boolean = true;
+  filtro: string = '';
   articulos: any[] = [
     {
       imagen:

@@ -1,6 +1,8 @@
 PAV2 - UTN FRC
 <div>
   <h1>{{ titulo }}</h1>
+  <label for="filtro">Filter by: </label>
+  <input type="text" name="filtro" [(ngModel)]="filtro" />
   <div class="table-responsive">
     <table class="table" *ngIf="articulos && articulos.length">
       <thead>
@@ -37,5 +39,6 @@ PAV2 - UTN FRC
         </tr>
       </tbody>
     </table>
+    <p>Filter entered: {{ filtro }}</p>
   </div>
 </div>

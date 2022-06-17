@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticulo } from '../models/iarticulo';
 
 @Component({
   selector: 'app-lista-articulos',
@@ -11,7 +12,7 @@ export class ListaArticulosComponent implements OnInit {
   margenImagen: number = 2;
   mostrarImagen: boolean = true;
   filtro: string = '';
-  articulos: any[] = [
+  articulos: IArticulo[] = [
     {
       imagen:
         'https://media.istockphoto.com/vectors/dirty-grunge-hand-drawn-with-brush-strokes-cross-x-vector-isolated-vector-id1201202836?k=20&m=1201202836&s=612x612&w=0&h=0ib7KQaJXonfKN0-tGNaMUIw2Hre9sJjd4hTsc3QwBc=',
@@ -21,6 +22,7 @@ export class ListaArticulosComponent implements OnInit {
       cantidad: 139,
       precio: 1221.4,
       puntaje: 4,
+      active: false,
     },
     {
       imagen:
@@ -31,6 +33,7 @@ export class ListaArticulosComponent implements OnInit {
       cantidad: 336,
       precio: 400.99,
       puntaje: 3,
+      active: true,
     },
   ];
   constructor() {}

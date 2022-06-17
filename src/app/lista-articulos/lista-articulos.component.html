@@ -2,7 +2,7 @@ PAV2 - UTN FRC
 <div>
   <h1>{{ titulo }}</h1>
   <div class="table-responsive">
-    <table class="table">
+    <table class="table" *ngIf="articulos && articulos.length">
       <thead>
         <tr>
           <th>Image</th>
@@ -13,7 +13,16 @@ PAV2 - UTN FRC
           <th>Score</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr *ngFor="let articulo of articulos">
+          <td></td>
+          <td>{{ articulo.descripcion }}</td>
+          <td>{{ articulo.codigo }}</td>
+          <td>{{ articulo.cantidad }}</td>
+          <td>{{ articulo.precio }}</td>
+          <td>{{ articulo.puntaje }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

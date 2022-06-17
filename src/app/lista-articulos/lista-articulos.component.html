@@ -15,7 +15,14 @@ PAV2 - UTN FRC
       </thead>
       <tbody>
         <tr *ngFor="let articulo of articulos">
-          <td></td>
+          <td>
+            <img
+              [src]="articulo.imagen"
+              [alt]="articulo.descripcion"
+              [style.height.px]="alturaImagen"
+              [style.margin.px]="margenImagen"
+            />
+          </td>
           <td>{{ articulo.descripcion }}</td>
           <td>{{ articulo.codigo }}</td>
           <td>{{ articulo.cantidad }}</td>

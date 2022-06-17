@@ -29,10 +29,10 @@ PAV2 - UTN FRC
               [style.margin.px]="margenImagen"
             />
           </td>
-          <td>{{ articulo.descripcion }}</td>
+          <td>{{ articulo.descripcion | uppercase }}</td>
           <td>{{ articulo.codigo }}</td>
           <td>{{ articulo.cantidad }}</td>
-          <td>{{ articulo.precio }}</td>
+          <td>{{ articulo.precio | currency }}</td>
           <td>{{ articulo.puntaje }}</td>
         </tr>
       </tbody>

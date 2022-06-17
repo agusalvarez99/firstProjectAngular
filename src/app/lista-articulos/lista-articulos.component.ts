@@ -9,6 +9,7 @@ export class ListaArticulosComponent implements OnInit {
   titulo: string = 'List of articles';
   alturaImagen: number = 40;
   margenImagen: number = 2;
+  mostrarImagen: boolean = true;
   articulos: any[] = [
     {
       imagen:
@@ -32,6 +33,9 @@ export class ListaArticulosComponent implements OnInit {
     },
   ];
   constructor() {}
+  mostrarOcultarImagen(): void {
+    this.mostrarImagen = !this.mostrarImagen;
+  }
 
   ngOnInit() {}
 }

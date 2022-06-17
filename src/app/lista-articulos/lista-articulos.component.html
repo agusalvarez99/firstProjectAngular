@@ -5,7 +5,12 @@ PAV2 - UTN FRC
     <table class="table" *ngIf="articulos && articulos.length">
       <thead>
         <tr>
-          <th>Image</th>
+          <th>
+            Image
+            <button (click)="mostrarOcultarImagen()">
+              {{ mostrarImagen ? 'Hidden' : 'Show' }}
+            </button>
+          </th>
           <th>Description</th>
           <th>Code</th>
           <th>Quantity</th>
@@ -17,6 +22,7 @@ PAV2 - UTN FRC
         <tr *ngFor="let articulo of articulos">
           <td>
             <img
+              *ngIf="mostrarImagen"
               [src]="articulo.imagen"
               [alt]="articulo.descripcion"
               [style.height.px]="alturaImagen"

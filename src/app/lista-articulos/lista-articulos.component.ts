@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-articulos.component.css'],
 })
 export class ListaArticulosComponent implements OnInit {
-  titulo: string = 'Lista de articulos';
+  titulo: string = 'List of articles';
   constructor() {}
 
   ngOnInit() {}

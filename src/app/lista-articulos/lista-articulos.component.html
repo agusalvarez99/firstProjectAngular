@@ -35,7 +35,10 @@ PAV2 - UTN FRC
           <td>{{ articulo.codigo }}</td>
           <td>{{ articulo.cantidad }}</td>
           <td>{{ articulo.precio | currency }}</td>
-          <td>{{ articulo.puntaje }}</td>
+          <td>
+            {{ articulo.puntaje }}
+            <app-puntaje [puntaje]="articulo.puntaje"></app-puntaje>
+          </td>
         </tr>
       </tbody>
     </table>

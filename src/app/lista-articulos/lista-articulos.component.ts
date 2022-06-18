@@ -21,7 +21,7 @@ export class ListaArticulosComponent implements OnInit {
       codigo: 'xsd-143',
       cantidad: 139,
       precio: 1221.4,
-      puntaje: 4,
+      puntaje: 4.5,
       active: false,
     },
     {

@@ -1,0 +1,10 @@
+<form [formGroup]="frmArticulos">
+  <label for="id">Id articulo</label>
+  <input id="id" name="id" type="text" formControlName="IdArticuloFamilia" />
+
+  <label for="familia">Familia</label>
+  <input id="familia" name="familia" type="text" formControlName="Familia" />
+
+  <input type="button" (click)="mostrar()" value="Input" />
+  <input type="button" (click)="limpiar()" value="Clean" />
+</form>

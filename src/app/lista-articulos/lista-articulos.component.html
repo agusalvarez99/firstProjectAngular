@@ -37,7 +37,10 @@ PAV2 - UTN FRC
           <td>{{ articulo.precio | currency }}</td>
           <td>
             {{ articulo.puntaje }}
-            <app-puntaje [puntaje]="articulo.puntaje"></app-puntaje>
+            <app-puntaje
+              [puntaje]="articulo.puntaje"
+              (puntajeClicked)="onPuntajeClicked($event)"
+            ></app-puntaje>
           </td>
         </tr>
       </tbody>

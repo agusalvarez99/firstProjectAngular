@@ -40,6 +40,9 @@ export class ListaArticulosComponent implements OnInit {
   mostrarOcultarImagen(): void {
     this.mostrarImagen = !this.mostrarImagen;
   }
+  onPuntajeClicked(mensaje: string): void {
+    this.titulo = 'El puntaje es ' + mensaje;
+  }
 
   ngOnInit() {}
 }

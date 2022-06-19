@@ -15,6 +15,7 @@ export class ListaArticulosComponent implements OnInit {
   mostrarImagen: boolean = true;
   filtro: string = '';
   articulos: IArticulo[] = [];
+  mensajeError: string;
 
   constructor(private articulosService: ArticulosService) {}
   mostrarOcultarImagen(): void {
@@ -26,5 +27,9 @@ export class ListaArticulosComponent implements OnInit {
 
   ngOnInit() {
     this.articulos = this.articulosService.getArticulos();
+    /*this.articulosService.getArticulos().subscribe({
+      next: (articulos) => (this.articulos = articulos),
+      error: (err) => (this.mensajeError = err),
+    });*/
   }
 }

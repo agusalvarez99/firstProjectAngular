@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { IArticulo } from '../models/iarticulo';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ArticulosService {
-  constructor() {}
-
+  /*
+  private articulosURL = 'https://pav2.azurewebsites.net/api/articulos';
+  constructor(private http: HttpClient) {}
+  getArticulos(): Observable<IArticulo[]> {
+    return this.http.get<IArticulo[]>(this.articulosURL);
+  }
+  */
   getArticulos(): IArticulo[] {
     return [
       {

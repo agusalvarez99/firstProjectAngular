@@ -2,7 +2,12 @@
   <div class="center">
     <hello name="{{ title }}"></hello>
   </div>
-  <app-lista-articulos></app-lista-articulos>
-  <app-articulo-familia></app-articulo-familia>
+  <ul>
+    <li><a [routerLink]="['/articulo']">Articulos Familia</a></li>
+    <li><a [routerLink]="['/lista-articulos']">Lista Artículos</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+  <!--<app-lista-articulos></app-lista-articulos>
+  <app-articulo-familia></app-articulo-familia>-->
   <p class="center">Author: {{ author }}</p>
 </body>

@@ -32,13 +32,20 @@ export class ArticulosComponent implements OnInit {
         ],
       ],
       Precio: [null, [Validators.required, Validators.pattern('[0-9]{1,7}')]],
-      Stock: [null, [Validators.required]],
+      Stock: [null, [Validators.required, Validators.pattern('[0-9]{1,7}')]],
       CodigoDeBarra: [
         '',
         [Validators.required, Validators.pattern('[0-9]{13}')],
       ],
       IdArticuloFamilia: ['', [Validators.required]],
-      FechaAlta: ['', [Validators.required]],
+      FechaAlta: [
+        '',
+        [
+          Validators.required,
+          //el pattern de la fecha no es correcto
+          Validators.pattern('[0-9]{1,7}'),
+        ],
+      ],
       Activo: [true, [Validators.required]],
     });
   }

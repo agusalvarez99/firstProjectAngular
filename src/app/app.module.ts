@@ -11,6 +11,7 @@ import { ArticuloFamiliaComponent } from './articulo-familia/articulo-familia.co
 import { PrincipalComponent } from './principal/principal.component';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import { DetalleArticuloComponent } from './detalle-articulo/detalle-articulo.component';
+import { ArticulosComponent } from './articulos/articulos.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { DetalleArticuloComponent } from './detalle-articulo/detalle-articulo.co
       { path: 'articulo', component: ArticuloFamiliaComponent },
       { path: 'articulo/:id', component: DetalleArticuloComponent },
       { path: 'lista-articulos', component: ListaArticulosComponent },
-      { path: '', component: PrincipalComponent },
+      { path: '', component: ArticulosComponent },
       { path: '**', component: PaginaNoEncontradaComponent },
     ]),
     HttpClientModule,
@@ -32,6 +33,7 @@ import { DetalleArticuloComponent } from './detalle-articulo/detalle-articulo.co
     ListaArticulosComponent,
     PuntajeComponent,
     ArticuloFamiliaComponent,
+    ArticulosComponent,
   ],
   bootstrap: [AppComponent],
 })

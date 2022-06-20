@@ -1,0 +1,56 @@
+<h1>Carga de articulos</h1>
+<form name="fg" [formGroup]="fg">
+  <label for="Nombre">Nombre</label>
+  <input type="text" name="Nombre" id="Nombre" formControlName="Nombre" />
+  <div>Dato requerido</div>
+  <div>Dato string, 4 a 55 char</div>
+
+  <label for="Precio">Precio</label>
+  <input type="text" name="Precio" id="Precio" formControlName="Precio" />
+  <div>Dato requerido</div>
+  <div>Dato numerico, 1 a 7 digitos</div>
+
+  <label for="Stock">Stock</label>
+  <input type="text" name="Stock" id="Stock" formControlName="Stock" />
+  <div>Dato requerido</div>
+  <div>Dato numerico, 1 a 7 digitos</div>
+
+  <label for="CodigoDeBarra">CodigoDeBarra</label>
+  <input
+    type="text"
+    name="CodigoDeBarra"
+    id="CodigoDeBarra"
+    formControlName="CodigoDeBarra"
+  />
+  <div>Dato requerido</div>
+  <div>Dato numerido, 13 digitos</div>
+  <label for="IdArticuloFamilia">IdArticuloFamilia</label>
+  <select
+    name="IdArticuloFamilia"
+    id="IdArticuloFamilia"
+    formControlName="IdArticuloFamilia"
+  >
+    <option *ngFor="let opt of Familias" [ngValue]="opt.IdArticuloFamilia">
+      {{ opt.Nombre }}
+    </option>
+  </select>
+  <div>Dato requerido</div>
+  <label for="FechaAlta">FechaAlta</label>
+  <input
+    type="text"
+    name="FechaAlta"
+    id="FechaAlta"
+    formControlName="FechaAlta"
+  />
+  <div>Dato requerido</div>
+  <div>Dato fecha, DD/MM/AAAA</div>
+  <label for="Activo">Activo</label>
+  <select name="Activo" id="Activo" formControlName="Activo">
+    <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
+      {{ opt.Nombre }}
+    </option>
+  </select>
+  <div>Dato requerido</div>
+
+  <input type="button" value="GRABAR" />
+</form>

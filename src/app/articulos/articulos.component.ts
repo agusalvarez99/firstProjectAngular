@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ArticulosFamilias } from '../models/articulos-familias';
 
 @Component({
@@ -15,6 +15,7 @@ export class ArticulosComponent implements OnInit {
     { Id: true, Nombre: 'SI' },
     { Id: false, Nombre: 'NO' },
   ];
+  Submitted: boolean = false;
 
   constructor(public FormBuilder: FormBuilder) {}
 
@@ -22,13 +23,31 @@ export class ArticulosComponent implements OnInit {
     this.Familias = ArticulosFamilias;
     this.fg = this.FormBuilder.group({
       IdArticulo: [0],
-      Nombre: [''],
-      Precio: [null],
-      Stock: [null],
-      CodigoDeBarra: [''],
-      IdArticuloFamilia: [''],
-      FechaAlta: [''],
-      Activo: [true],
+      Nombre: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(55),
+        ],
+      ],
+      Precio: [null, [Validators.required, Validators.pattern('[0-9]{1,7}')]],
+      Stock: [null, [Validators.required]],
+      CodigoDeBarra: [
+        '',
+        [Validators.required, Validators.pattern('[0-9]{13}')],
+      ],
+      IdArticuloFamilia: ['', [Validators.required]],
+      FechaAlta: ['', [Validators.required]],
+      Activo: [true, [Validators.required]],
     });
+  }
+  Grabar() {
+    this.Submitted = true;
+    if (this.fg.invalid) {
+      window.alert('Formulario invalido!');
+    } else {
+      window.alert('Todo OK!');
+    }
   }
 }

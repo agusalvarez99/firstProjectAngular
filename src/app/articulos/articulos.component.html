@@ -2,13 +2,42 @@
 <form name="fg" [formGroup]="fg">
   <label for="Nombre">Nombre</label>
   <input type="text" name="Nombre" id="Nombre" formControlName="Nombre" />
-  <div>Dato requerido</div>
-  <div>Dato string, 4 a 55 char</div>
+  <div
+    *ngIf="
+      (fg.controls.Nombre.touched || Submitted) &&
+      fg.controls.Nombre.errors?.required
+    "
+  >
+    Dato requerido
+  </div>
+  <div
+    *ngIf="
+      (fg.controls.Nombre.touched || Submitted) &&
+      (fg.controls.Nombre.errors?.minlength ||
+        fg.controls.Nombre.errors?.maxlength)
+    "
+  >
+    Dato string, 4 a 55 char
+  </div>
 
   <label for="Precio">Precio</label>
   <input type="text" name="Precio" id="Precio" formControlName="Precio" />
-  <div>Dato requerido</div>
-  <div>Dato numerico, 1 a 7 digitos</div>
+  <div
+    *ngIf="
+      (fg.controls.Precio.touched || Submitted) &&
+      fg.controls.Precio.errors?.required
+    "
+  >
+    Dato requerido
+  </div>
+  <div
+    *ngIf="
+      (fg.controls.Precio.touched || Submitted) &&
+      fg.controls.Precio.errors?.pattern
+    "
+  >
+    Dato numerico, 1 a 7 digitos
+  </div>
 
   <label for="Stock">Stock</label>
   <input type="text" name="Stock" id="Stock" formControlName="Stock" />
@@ -22,8 +51,22 @@
     id="CodigoDeBarra"
     formControlName="CodigoDeBarra"
   />
-  <div>Dato requerido</div>
-  <div>Dato numerido, 13 digitos</div>
+  <div
+    *ngIf="
+      (fg.controls.CodigoDeBarra.touched || Submitted) &&
+      fg.controls.CodigoDeBarra.errors?.required
+    "
+  >
+    Dato requerido
+  </div>
+  <div
+    *ngIf="
+      (fg.controls.CodigoDeBarra.touched || Submitted) &&
+      fg.controls.CodigoDeBarra.errors?.pattern
+    "
+  >
+    Dato numerido, 13 digitos
+  </div>
   <label for="IdArticuloFamilia">IdArticuloFamilia</label>
   <select
     name="IdArticuloFamilia"
@@ -52,5 +95,5 @@
   </select>
   <div>Dato requerido</div>
 
-  <input type="button" value="GRABAR" />
+  <input type="button" value="GRABAR" (click)="Grabar()" />
 </form>
